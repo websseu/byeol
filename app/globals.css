@@ -1,0 +1,213 @@
+@import url("https://websseu.github.io/fffont/fonts/NanumSquareNeo/NanumSquareNeo.css");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  background-color: #f1f8f3;
+}
+.NanumSquareNeo {
+  font-family: "NanumSquareNeo";
+}
+.poppins {
+  font-family: "Poppins";
+}
+.react-calendar {
+  width: 100% !important;
+  max-width: 406px !important;
+  padding: 2% !important;
+  background-color: #f1f8f3 !important;
+  border-color: #cfcfcf !important;
+  margin-top: 5px !important;
+  font-family: "Poppins" !important;
+}
+.react-calendar__navigation__arrow {
+  font-family: Arial !important;
+}
+.react-calendar__tile--active {
+  background: #159542 !important;
+  border-radius: 50px !important;
+}
+@layer components {
+  /* header */
+  .header__container {
+    @apply w-full border-b-2 border-black bg-[#f1f8f3];
+  }
+  .header__title {
+    @apply flex items-center justify-between px-2 md:px-4 py-0 md:py-2 relative z-10 pb-0;
+  }
+  .header__title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 1px;
+    background-color: #00000038;
+    z-index: -1;
+  }
+  .header__title .left {
+    @apply w-9 h-9 rounded-full items-center justify-center ring ring-gray-300/20 hover:bg-blue-50 bg-[#f1f8f3] flex cursor-pointer;
+  }
+  .header__title .right {
+    @apply w-9 h-9 rounded-full items-center justify-center ring ring-gray-300/20 hover:bg-blue-50 bg-[#f1f8f3] flex cursor-pointer;
+  }
+  .header__title .center a {
+    @apply flex items-center uppercase poppins font-black bg-[#f1f8f3] px-4 text-6xl sm:text-7xl md:text-8xl;
+  }
+  .header__title .center a span:first-child {
+    @apply mr-[-0.5vw] inline-block;
+  }
+  .header__title .center a span:last-child {
+    @apply ml-[-0.5vw] inline-block;
+  }
+  .header__title .center a svg {
+    @apply hover:text-red-600 transition-colors duration-500;
+  }
+  .header__nav {
+    @apply fixed md:absolute md:bottom-auto bottom-0 w-full md:top-[98px] z-50;
+  }
+  .header__nav ul {
+    @apply flex md:justify-center justify-evenly bg-slate-900/20 backdrop-blur-md md:bg-transparent md:backdrop-blur-0;
+  }
+  .header__nav ul li a {
+    @apply md:bg-[#f1f8f3] md:py-0 py-3 bg-transparent px-2 poppins text-sm inline-block;
+  }
+  .header__nav ul li:first-child a {
+    @apply pl-6;
+  }
+  .header__nav ul li:last-child a {
+    @apply pr-6;
+  }
+
+  /* main */
+  .main__container {
+    @apply max-w-screen-xl mx-auto md:mt-[60px] sm:mt-[30px] mt-[30px] px-4;
+  }
+
+  /* footer */
+  .footer__container {
+    @apply mx-auto max-w-7xl p-4 mt-20;
+  }
+
+  /* commons */
+  .byeol__loading {
+    @apply text-center p-4 py-10 text-gray-700 min-h-screen NanumSquareNeo text-sm;
+  }
+  .byeol__error {
+    @apply text-center p-4 py-10 text-gray-700 min-h-screen NanumSquareNeo text-sm;
+  }
+
+  /* store page */
+  .store__icon {
+    @apply mb-10 flex justify-center relative;
+  }
+
+  .store__local ul {
+    @apply flex flex-wrap justify-center gap-2 NanumSquareNeo;
+  }
+  .store__local ul li {
+    @apply border text-gray-600 sm:px-3 sm:py-2 px-2 py-1 rounded-lg text-xs sm:text-sm relative cursor-pointer hover:bg-blue-100 hover:text-blue-800 hover:border-blue-800;
+  }
+  .store__title ul li {
+    @apply text-xs border px-2;
+  }
+  .store__lists {
+    @apply NanumSquareNeo;
+  }
+  .store__list {
+    @apply NanumSquareNeo flex flex-wrap items-center text-[#6E6E6E] text-sm cursor-pointer py-1 relative;
+  }
+  .store__info {
+    @apply sm:mt-10 mt-6 flex items-center justify-between border-b border-black;
+  }
+  .store__info h2 {
+    @apply NanumSquareNeo pb-1;
+  }
+  .noParking {
+    @apply relative;
+  }
+  .noParking::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 100%;
+    height: 1px;
+    background-color: red;
+    transform: rotate(45deg);
+  }
+
+  .store__list .number {
+    @apply px-4 sm:w-12 w-6 text-xs sm:text-sm;
+  }
+  .store__list .name {
+    @apply py-2 px-4 sm:w-52 w-32 text-xs sm:text-sm truncate;
+  }
+  .store__list .address {
+    @apply text-xs sm:text-sm truncate pl-4;
+  }
+  .store__list .plus {
+    @apply absolute right-2 border p-1 hover:border-blue-300 hover:bg-blue-100;
+  }
+
+  .count__table {
+    @apply w-full NanumSquareNeo font-light text-center;
+  }
+  .count__table th {
+    @apply font-medium py-3 text-sm border-b border-black text-gray-600 sticky top-0 z-20 bg-[#f1f8f3];
+  }
+  .count__table td {
+    @apply py-3 border-b border-r text-xs font-medium hover:bg-blue-100 text-[#6E6E6E];
+  }
+  .count__table td:last-child {
+    @apply border-r-0;
+  }
+
+  .card__title {
+    @apply mb-5 flex flex-wrap gap-1;
+  }
+  .card__title span {
+    @apply text-[#6E6E6E] border px-2 py-1 border-gray-400 rounded-md NanumSquareNeo text-xs;
+  }
+  .card__inner {
+    @apply grid grid-cols-4 gap-1;
+  }
+  .card__inner > div {
+    @apply relative;
+  }
+  .card__inner > div h2 {
+    @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white NanumSquareNeo cursor-pointer opacity-0;
+  }
+  .card__inner > div::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8));
+    opacity: 0;
+    transition-duration: 0.2s;
+    transition-property: opacity, visibility;
+  }
+  .card__inner > div:hover::before {
+    @apply opacity-100;
+  }
+  .card__inner > div:hover h2 {
+    @apply opacity-100 underline underline-offset-4;
+  }
+
+  .store__popup {
+    @apply fixed right-4 bottom-4 w-96 border border-black p-2 bg-[#f1f8f3];
+  }
+  .store__popup .image {
+    @apply w-full h-60 bg-cover bg-center;
+  }
+  .store__popup .info {
+    @apply NanumSquareNeo text-gray-600 text-sm mt-2;
+  }
+}
